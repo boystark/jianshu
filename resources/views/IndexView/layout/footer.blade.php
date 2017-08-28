@@ -1,8 +1,7 @@
 <footer class="blog-footer ">
     <section class="container">
         <p>Blog template built for
-            <a href="http://getbootstrap.com">Bootstrap</a> by
-            <a href="https://twitter.com/mdo">@mdo</a>.</p>
+            <a href="http://www.boystark.com">Boystark</a>
         <p>
             <a href="#">Back to top</a>
         </p>

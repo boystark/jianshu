@@ -15,6 +15,17 @@ use Illuminate\Support\Facades\Redirect;
 class LoginCtr extends Controller
 {
     public function index(){
+        $posts = \App\Post::orderBy('created_at','desc')->withCount(['comments','zans'])->paginate(6);
+        $topics = \App\Topic::all();
+        return view('IndexView/nologin/index',compact('posts','topics'));
+    }
+    public function show(\App\Post $post){
+        $post->load('comments');
+        $topics = \App\Topic::all();
+        return view('IndexView/nologin/show',compact('post','topics'));
+    }
+
+    public function log(){
         return view('IndexView/login/login');
     }
     public function login(){

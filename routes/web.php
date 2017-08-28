@@ -15,10 +15,11 @@ Route::group(['namespace'=>'IndexCtr'], function () {
     //注册
     Route::get('/register', 'RegisterCtr@index');
     Route::post('/register', 'RegisterCtr@register');
-    //登入
+    //首页
     Route::get('/', 'LoginCtr@index');
+    Route::get('/show/{post}', 'LoginCtr@show');
 
-    Route::get('/login', 'LoginCtr@index');
+    Route::get('/login', 'LoginCtr@log');
     Route::post('/login', 'LoginCtr@login');
     //登出
     Route::get('/logout', 'LoginCtr@logout');
