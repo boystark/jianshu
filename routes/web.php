@@ -10,17 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
 //前台用户模块
 Route::group(['namespace'=>'IndexCtr'], function () {
     //注册
     Route::get('/register', 'RegisterCtr@index');
     Route::post('/register', 'RegisterCtr@register');
     //登入
+    Route::get('/', 'LoginCtr@index');
+
     Route::get('/login', 'LoginCtr@index');
     Route::post('/login', 'LoginCtr@login');
     //登出

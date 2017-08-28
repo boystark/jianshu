@@ -20,10 +20,9 @@ class TopicCtr extends Controller
        //专题的文章列表，按照创建时间倒序排列，前10
        $posts = $topic->posts()->orderBy('created_at','desc')->take(10)->get();
         //属于我的文章 但是没有投稿
-
-       $myposts = \App\Post::AuthorBy(\Auth::id())->TopicNotBy($topic->id)->get();
-
-       return view('IndexView/topic/show',compact('topic','posts','myposts'));
+      // $myposts = \App\Post::AuthorBy(\Auth::id())->TopicNotBy($topic->id)->get();
+       // return view('IndexView/topic/show',compact('topic','posts','myposts'));
+       return view('IndexView/topic/show',compact('topic','posts'));
    }
    public function submit(Topic $topic){
 
