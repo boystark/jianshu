@@ -17,6 +17,9 @@ Route::group(['namespace'=>'IndexCtr'], function () {
     Route::post('/register', 'RegisterCtr@register');
     //首页
     Route::get('/', 'LoginCtr@index');
+    //通知
+    Route::get('/notices', 'NoticeCtr@index');
+
     Route::get('/show/{post}', 'LoginCtr@show');
 
     Route::get('/login', 'LoginCtr@log');
